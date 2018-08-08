@@ -21,6 +21,7 @@ module GoFood
           		request_specs: false
           	g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+    Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
