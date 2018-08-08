@@ -43,12 +43,17 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'rspec-rails', ">= 3.4.4"
+  gem 'factory_girl_rails', "~> 4.4.1"
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15', '< 4.0'
-  gem 'selenium-webdriver'
+  gem 'capybara', "~> 2.4.3"
+  gem 'selenium-webdriver', "~> 2.43.0"
+  gem 'database_cleaner', "~>1.3.0"
+  gem 'launchy', "~> 2.4.2"
+  gem 'faker'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
