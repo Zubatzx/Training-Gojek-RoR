@@ -169,19 +169,5 @@ describe Food do
 	    food.valid?
 	    expect(food.errors[:price]).to include("must be greater than or equal to 0.01")
   	end
-  	
-  	it "is valid with image_url ending with '.gif', '.jpg', or '.png'" do
-	    expect(build(:food, image_url: "food.jpg")).to be_valid
-	  end
-	
-	it "is invalid with image_url ending not with '.gif', '.jpg', or '.png'" do
-	    food = build(:food, image_url: "food.csv")
-	    food.valid?
-	    expect(food.errors[:image_url]).to include("must be a URL for GIF, JPG or PNG image.")
- 	end
- 	
  	
 end
-
- 
-  
