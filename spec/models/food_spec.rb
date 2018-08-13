@@ -171,3 +171,21 @@ describe Food do
   	end
  	
 end
+
+# kalau di rspec 3.xx, kita harus spesifikasiin kalau yang kita describe itu controller dengan tambahin :type => :controller
+describe FoodsController, :type => :controller do
+  describe 'GET #show' do
+      it "assigns the requested food to @food" do
+        food = create(:food)
+        get :show, params: { id: food }
+        expect(assigns(:food)).to eq food
+      end
+  
+      it "renders the :show template" do
+        food = create(:food)
+        get :show, params: { id: food }
+        expect(response).to render_template :show
+      end
+  end
+  
+end
