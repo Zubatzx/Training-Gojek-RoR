@@ -45,6 +45,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'rspec-rails', ">= 3.4.4"
   gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'rails-controller-testing'
 end
 
 group :test do
@@ -54,6 +55,7 @@ group :test do
   gem 'database_cleaner', "~>1.3.0"
   gem 'launchy', "~> 2.4.2"
   gem 'faker'
+  # fakernya paling aman sih versi 1.9.1, kalau nanti ada error sama fakernya, ganti versi ke yang 1.9.1
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
