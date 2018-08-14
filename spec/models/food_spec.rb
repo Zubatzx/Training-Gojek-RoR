@@ -169,6 +169,16 @@ describe Food do
 	    food.valid?
 	    expect(food.errors[:price]).to include("must be greater than or equal to 0.01")
   	end
+
+  	it "can't be destroyed while it has line_item(s)" do
+  		cart = create(:cart)
+  		food = create(:food)
+
+  		line_item = create(:line_item, cart: cart, food: food)
+  		food.line_items << line_item
+
+  		expect { food.destroy }.not_to change(Food, :count)
+  	end
  	
 end
 
